@@ -135,7 +135,7 @@ IP-Drive/
 └── README.md
 ⚙️ Installation & Setup
 1️⃣ Clone Repository
-git clone https://github.com/your-username/ip-drive.git
+git clone https://github.com/lohitha-2206/ip-drive.git
 cd ip-drive
 2️⃣ Install Backend Dependencies
 cd server
