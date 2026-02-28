@@ -1,12 +1,170 @@
-# React + Vite
+🚀 IP Drive – Internship & Placement Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+IP Drive is a comprehensive internship and placement support platform designed for students.
+It combines internship listings, job opportunities, AI-powered quizzes, application tracking, and a recruitment calendar into one unified system.
 
-Currently, two official plugins are available:
+🌟 Features
+🔐 Authentication
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Secure login system
 
-## Expanding the ESLint configuration
+Dynamic username display on dashboard
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Session-based authentication
+
+📊 Dashboard
+
+Personalized welcome message
+
+Quick access cards:
+
+Browse Internships
+
+Browse Hiring
+
+Calendar
+
+AI Quiz
+
+Clean and responsive UI
+
+💼 Internships Section
+
+Search bar for filtering
+
+Dropdown filter (work type)
+
+Data loaded from local JSON (converted from CSV)
+
+Clean card-based layout
+
+Save internships (stored in localStorage)
+
+🏢 Hiring Section
+
+Displays job listings from hiring.json
+
+Similar layout to internships
+
+Save functionality
+
+📅 Recruitment Calendar
+
+Interactive calendar UI
+
+Events displayed directly on calendar tiles
+
+Color-coded events:
+
+🔴 Missed
+
+🟡 Upcoming
+
+🟢 Completed
+
+Popup alerts (20 minutes before event)
+
+Persistent storage
+
+🧠 AI Quiz Generator
+
+Practice interview questions
+
+Topic-based quiz generation
+
+Scalable system (supports 3000+ questions)
+
+Future-ready for OpenAI integration
+
+📚 Resources Section
+
+Study materials and preparation content
+
+Backend-ready for integration
+
+🛠️ Tech Stack
+Frontend
+
+React.js
+
+CSS
+
+JavaScript
+
+Backend
+
+Node.js
+
+Express.js
+
+Database / Storage
+
+Local JSON files (Internships & Hiring)
+
+localStorage (Saved items & tracking)
+
+Supabase (planned integration for dynamic backend)
+
+Deployment
+
+Vercel (Frontend)
+
+Node server (Backend)
+
+Live Demo:
+👉 https://ip-drive-s1gv.vercel.app/
+
+📂 Project Structure
+IP-Drive/
+│
+├── client/                # React Frontend
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   └── App.js
+│
+├── server/                # Node.js Backend
+│   ├── routes/
+│   ├── controllers/
+│   └── server.js
+│
+├── data/
+│   ├── internships.json
+│   └── hiring.json
+│
+└── README.md
+⚙️ Installation & Setup
+1️⃣ Clone Repository
+git clone https://github.com/your-username/ip-drive.git
+cd ip-drive
+2️⃣ Install Backend Dependencies
+cd server
+npm install
+npm start
+3️⃣ Install Frontend Dependencies
+cd client
+npm install
+npm start
+
+Frontend runs on:
+
+http://localhost:3000
+
+Backend runs on:
+
+http://localhost:5000
+🔮 Future Improvements
+
+Full Supabase integration
+
+Real-time notifications
+
+Resume builder with AI tailoring
+
+Application tracking analytics
+
+Mentor booking system
+
+Admin dashboard
+
+Email reminders for events
