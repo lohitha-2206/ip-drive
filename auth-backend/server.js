@@ -6,11 +6,23 @@ require("dotenv").config();
 
 const app = express();
 
-// CORS configuration
-app.use(cors({
-  origin: ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"],
-  credentials: true
-}));
+// CORS configuration (env-driven allowlist)
+const allowedOrigins = process.env.CORS_ORIGINS
+  ? process.env.CORS_ORIGINS.split(",")
+  : ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true); // allow non-browser requests (Postman, server-to-server)
+      if (allowedOrigins.includes("*") || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
