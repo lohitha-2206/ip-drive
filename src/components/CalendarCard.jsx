@@ -27,9 +27,19 @@ const CalendarCard = ({ event, dateKey, index, onDelete, onComplete }) => {
       <p><strong>{event.time}</strong></p>
       <p>{event.description}</p>
       {event.website && (
-        <a href={event.website} target="_blank" rel="noreferrer">
-          Visit Website
-        </a>
+        (() => {
+          const raw = (event.website || "").trim();
+          const normalized = /^(https?:)?\/\//i.test(raw)
+            ? raw.replace(/^(https?:)?\/\//i, "https://")
+            : raw.startsWith("http://") || raw.startsWith("https://")
+            ? raw
+            : `https://${raw}`;
+          return (
+            <a href={normalized} target="_blank" rel="noreferrer">
+              Visit Website
+            </a>
+          );
+        })()
       )}
       <div className="buttons">
         <button onClick={onComplete}>✓ Mark Complete</button>
