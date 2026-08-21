@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import InternshipCard from "../Internships/InternshipCard";
-// import HiringCard from "../Hiring/HiringCard"; // uncomment when you have it
+import HiringCard from "../Hiring/HiringCard";
 
 const Saved = () => {
   const [activeTab, setActiveTab] = useState("internships");
@@ -23,7 +23,7 @@ const Saved = () => {
   };
 
   const handleUnsaveHiring = (id) => {
-    const updated = savedHiring.filter((item) => item.id !== id);
+    const updated = savedHiring.filter((item) => item.job_id !== id);
     setSavedHiring(updated);
     localStorage.setItem("savedHiring", JSON.stringify(updated));
   };
@@ -87,10 +87,9 @@ const Saved = () => {
           <div className="internship-grid">
             {savedHiring.length > 0 ? (
               savedHiring.map((item, index) => (
-                // Replace this when HiringCard is ready
-                <InternshipCard
-                  key={index}
-                  internship={item}
+                <HiringCard
+                  key={item.job_id || index}
+                  hiring={item}
                   isSavedPage={true}
                   onUnsave={handleUnsaveHiring}
                 />
